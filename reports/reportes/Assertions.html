@@ -11,9 +11,9 @@
         <div class="row">
             <div class="col-xs-12">
                 <h2 class="text-capitalize">Test Result</h2>
-                <p class='attribute'><strong>Start Time: </strong>2021-07-25 15:18:12</p>
-                <p class='attribute'><strong>Duration: </strong>26.536s</p>
-                <p class='attribute'><strong>Status: </strong>Pass: 2</p>
+                <p class='attribute'><strong>Start Time: </strong>2021-07-26 21:01:01</p>
+                <p class='attribute'><strong>Duration: </strong>17.152s</p>
+                <p class='attribute'><strong>Status: </strong>Error: 3</p>
             </div>
         </div>
         <div class="row">
@@ -27,38 +27,80 @@
                     </thead>
                     <tbody>
                         
-                            <tr class='success'>
-                                <td class="col-xs-9">test_language_selector (__main__.AssertionsTest)</td>
+                            <tr class='warning'>
+                                <td class="col-xs-9">test_language_selector (__main__.Mercado_libre_Test)</td>
                                 <td class="col-xs-3">
-                                    <span class="label label-success">
+                                    <span class="label label-warning">
                                         
-                                            Pass
+                                            Error
                                         
                                     </span>
+                                    
+                                        &nbsp<button class="btn btn-default btn-xs">View</button>
                                     
                                 </td>
                             </tr>
                             
+                                <tr style="display:none;">
+                                    <td class="col-xs-9">
+                                        <p>AttributeError</p>
+                                        <p>'Mercado_libre_Test' object has no attribute 'is_element_present'</p>
+                                    </td>
+                                </tr>
+                            
                         
-                            <tr class='success'>
-                                <td class="col-xs-9">test_search_field (__main__.AssertionsTest)</td>
+                            <tr class='warning'>
+                                <td class="col-xs-9">test_search_field (__main__.Mercado_libre_Test)</td>
                                 <td class="col-xs-3">
-                                    <span class="label label-success">
+                                    <span class="label label-warning">
                                         
-                                            Pass
+                                            Error
                                         
                                     </span>
                                     
+                                        &nbsp<button class="btn btn-default btn-xs">View</button>
+                                    
                                 </td>
                             </tr>
+                            
+                                <tr style="display:none;">
+                                    <td class="col-xs-9">
+                                        <p>AttributeError</p>
+                                        <p>'Mercado_libre_Test' object has no attribute 'is_element_present'</p>
+                                    </td>
+                                </tr>
+                            
+                        
+                            <tr class='warning'>
+                                <td class="col-xs-9">docstring</td>
+                                <td class="col-xs-3">
+                                    <span class="label label-warning">
+                                        
+                                            Error
+                                        
+                                    </span>
+                                    
+                                        &nbsp<button class="btn btn-default btn-xs">View</button>
+                                    
+                                </td>
+                            </tr>
+                            
+                                <tr style="display:none;">
+                                    <td class="col-xs-9">
+                                        <p>ElementClickInterceptedException</p>
+                                        <p>Message: element click intercepted: Element <a href="https://videojuegos.mercadolibre.com.co/consolas/bogota-dc/playstation-4#applied_filter_id%3Dstate%26applied_filter_name%3DUbicaci%C3%B3n%26applied_filter_order%3D11%26applied_value_id%3DCO-DC%26applied_value_name%3DBogot%C3%A1+D.C.%26applied_value_order%3D5%26applied_value_results%3D1061%26is_custom%3Dfalse" class="ui-search-link" aria-label="Bogotá D.C.">...</a> is not clickable at point (412, 909). Other element would receive the click: <div role="region" id="newCookieDisclaimerBanner" class="nav-new-cookie-disclaimer">...</div>
+  (Session info: chrome=92.0.4515.107)
+</p>
+                                    </td>
+                                </tr>
                             
                         
                         <tr>
                             <td>
-                               Total Test Runned: 2
+                               Total Test Runned: 3
                             </td>
                             <td>
-                                <span>Pass: 2</span>
+                                <span>Error: 3</span>
                             </td>
                         </tr>
                     </tbody>
