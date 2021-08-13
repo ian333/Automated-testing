@@ -8,7 +8,13 @@ from selenium.common.exceptions import NoSuchElementException
 
 class Mercado_libre_Test(unittest.TestCase):
     def setUp(self):
-        
+        print("""
+ 
+        This test script makes a search in Mercado Libre Colombia for a Playstation 4
+        and stablish the locacion in bogota then filter by new products
+         and finally sets the view from the lower price to the higher price
+
+        """)
         options = webdriver.ChromeOptions()
         options.binary_location = '/usr/bin/brave-browser'
         self.driver = webdriver.Chrome(
@@ -16,7 +22,7 @@ class Mercado_libre_Test(unittest.TestCase):
         driver = self.driver
         driver.get('http://mercadolibre.com/')
         driver.maximize_window()
-        driver.implicitly_wait(15)
+        driver.implicitly_wait(5)
     
     def test_search_ps4(self):
         """
@@ -24,6 +30,7 @@ class Mercado_libre_Test(unittest.TestCase):
         Filtra los productos nuevos y los ordena de mayor precio a menor precio
 
         """
+
         driver=self.driver
         country=driver.find_element_by_id('CO')
         country.click()
@@ -62,7 +69,9 @@ class Mercado_libre_Test(unittest.TestCase):
     
 
     def tearDown(self):
+
         self.driver.close()
+        self.driver.quit()
 
 if __name__ == "__main__":
     unittest.main(verbosity=3, testRunner=HTMLTestRunner(

@@ -6,6 +6,12 @@ from selenium import webdriver
 from selenium.webdriver.common import by
 from urllib3.packages.six import assertCountEqual
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import Select
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+
+
 
 class Mercado_libre_Test(unittest.TestCase):
     def setUp(self):
@@ -24,6 +30,8 @@ class Mercado_libre_Test(unittest.TestCase):
         docstring
         """
         driver=self.driver
+        accept_icon=driver.find_element_by_xpath('//*[@id="cafeto_popup"]/div/div/div/button')
+        accept_icon.click()
         accept_cookies=driver.find_element_by_id('cookie_action_close_header')
         accept_cookies.click()
         sleep(1)
@@ -39,7 +47,10 @@ class Mercado_libre_Test(unittest.TestCase):
         sleep(1)
         blog=driver.find_element_by_partial_link_text('Blog')
         blog.click()
+
         sleep(1)
+        accept_icon=driver.find_element_by_xpath('//*[@id="cafeto_popup"]/div/div/div/button')
+        accept_icon.click()
         for i in range(60):
             driver.execute_script(f"window.scrollTo(0, {i*14})")
         sleep(2)     
@@ -56,57 +67,54 @@ class Mercado_libre_Test(unittest.TestCase):
         sleep(2)   
          
 
-        about_us=driver.find_element_by_partial_link_text('About Us')
+        about_us=driver.find_element_by_partial_link_text('Careers')
         about_us.click()
         sleep(1) 
         for i in range(60):
             driver.execute_script(f"window.scrollTo(0, {i*17})")
-        join_our_team=driver.find_element_by_xpath('//*[@id="cafeto-about-us"]/div[3]/div/div[1]/div[2]/a')
+        join_our_team=driver.find_element_by_xpath('//*[@id="jobvite-jobs-section"]/div[2]/div[1]/div/div[3]/div/div[2]/a')
         join_our_team.click()
         sleep(0.1) 
         for i in range(60):
             driver.execute_script(f"window.scrollTo(0, {i*14})")
 
 
-        qa_tester=driver.find_element_by_xpath('//*[@id="JazzHrJobs"]/div[4]/div/div[2]/a')
-        qa_tester.click()
+        #qa_tester=driver.find_element_by_xpath('//*[@id="JazzHrJobs"]/div[4]/div/div[2]/a')
+        #qa_tester.click()
 
-        window_after = driver.window_handles[1]
+        window_after = driver.window_handles[0]
         
-        driver.switch_to_window(driver.window_handles[1])
-        apply=driver.find_element_by_xpath('/html/body/div[1]/form/div[3]/input')
-        apply.click()
+        driver.switch_to_window(driver.window_handles[0])
+        #apply=driver.find_element_by_xpath('/html/body/div[1]/form/div[3]/input')
+        #apply.click()
         
         sleep(2)
 
-        first_name=driver.find_element_by_name('CandidateFirstName')
+        first_name=driver.find_element_by_name('input-yp7tZfwI')
         first_name.clear()
         first_name.send_keys('Sebastian')
-        last_name=driver.find_element_by_name('CandidateLastName')
+        last_name=driver.find_element_by_name('input-yo7tZfwH')
         last_name.clear()
         last_name.send_keys('Vazquez')
-        email=driver.find_element_by_name('CandidateEmail')
+        email=driver.find_element_by_name('input-yn7tZfwG')
         email.clear()
         email.send_keys('sebastianvaz123@hotmail.com')
+        email=driver.find_element_by_name('input-ym6tZfwE')
+        email.clear()
+        email.send_keys('+5215526743893')
 
-        write_now=driver.find_element_by_xpath('//*[@id="form"]/div[6]/div[1]/span/label[2]')
-        write_now.click()
-        sleep(1)
-
-        cover_note=driver.find_element_by_id('CandidateCoverNote')
-        cover_note.clear()
-        text='Hi ✌️😁 this is an example of my skills, i hope you enjoyed 🧐🧐'
-        driver.execute_script("arguments[0].innerHTML = '{}'".format(text),cover_note)
-        cover_note.send_keys('.')
-        
+        text='Hi ✌️😁 this is an example of my skills, i hope you enjoyed 🧐🧐 and well i am very excited for work with lyft ✌️😁♥️'
+        print(text)        
         sleep(10)
 
         
 
 
     def tearDown(self):
+        text='Hi ✌️😁 this is an example of my skills, i hope you enjoyed 🧐🧐 and well i am very excited for work with lyft ✌️😁♥️'
+        print(text)      
         self.driver.close()
 
 if __name__ == "__main__":
     unittest.main(verbosity=3, testRunner=HTMLTestRunner(
-        output='reportes', report_name='Mercado_libre'))
+        output='reportes', report_name='Cafeto'))
