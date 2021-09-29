@@ -103,7 +103,7 @@ class Mercado_libre_Test(unittest.TestCase):
         email.clear()
         email.send_keys('+5215526743893')
 
-        text='Hi ✌️😁 this is an example of my skills, i hope you enjoyed 🧐🧐 and well i am very excited for work with lyft ✌️😁♥️'
+        text='Hi ✌️😁 this is an example of my skills, i hope you enjoyed 🧐🧐✌️😁♥️'
         print(text)        
         sleep(10)
 
@@ -111,7 +111,7 @@ class Mercado_libre_Test(unittest.TestCase):
 
 
     def tearDown(self):
-        text='Hi ✌️😁 this is an example of my skills, i hope you enjoyed 🧐🧐 and well i am very excited for work with lyft ✌️😁♥️'
+        text='Hi ✌️😁 this is an example of my skills, i hope you enjoyed 🧐🧐✌️😁♥️'
         print(text)      
         self.driver.close()
 

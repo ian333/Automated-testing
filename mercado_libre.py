@@ -10,7 +10,7 @@ class Mercado_libre_Test(unittest.TestCase):
     def setUp(self):
         print("""
  
-        This test script makes a search in Mercado Libre Colombia for a Playstation 4
+        This test script makes a search in Mercado Libre Colombia for a Playstation 3
         and stablish the locacion in bogota then filter by new products
          and finally sets the view from the lower price to the higher price
 
@@ -22,7 +22,7 @@ class Mercado_libre_Test(unittest.TestCase):
         driver = self.driver
         driver.get('http://mercadolibre.com/')
         driver.maximize_window()
-        driver.implicitly_wait(5)
+        driver.implicitly_wait(15)
     
     def test_search_ps4(self):
         """
@@ -69,9 +69,7 @@ class Mercado_libre_Test(unittest.TestCase):
     
 
     def tearDown(self):
-
         self.driver.close()
-        self.driver.quit()
 
 if __name__ == "__main__":
     unittest.main(verbosity=3, testRunner=HTMLTestRunner(
