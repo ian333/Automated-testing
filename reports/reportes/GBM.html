@@ -11,9 +11,9 @@
         <div class="row">
             <div class="col-xs-12">
                 <h2 class="text-capitalize">Test Result</h2>
-                <p class='attribute'><strong>Start Time: </strong>2021-09-28 23:40:48</p>
-                <p class='attribute'><strong>Duration: </strong>20.255s</p>
-                <p class='attribute'><strong>Status: </strong>Pass: 1</p>
+                <p class='attribute'><strong>Start Time: </strong>2021-09-30 00:56:46</p>
+                <p class='attribute'><strong>Duration: </strong>55.389s</p>
+                <p class='attribute'><strong>Status: </strong>Fail: 1</p>
             </div>
         </div>
         <div class="row">
@@ -27,17 +27,31 @@
                     </thead>
                     <tbody>
                         
-                            <tr class='success'>
+                            <tr class='danger'>
                                 <td class="col-xs-9">Esta Funcion hace una busqueda en Mercado Libre Colombia y establece como ubicacion Bogota</td>
                                 <td class="col-xs-3">
-                                    <span class="label label-success">
+                                    <span class="label label-danger">
                                         
-                                            Pass
+                                            Fail
                                         
                                     </span>
                                     
+                                        &nbsp<button class="btn btn-default btn-xs">View</button>
+                                    
                                 </td>
                             </tr>
+                            
+                                <tr style="display:none;">
+                                    <td class="col-xs-9">
+                                        <p>AssertionError</p>
+                                        <p>'https://gbmenlinea.gbm.com.mx/Documentosanalisis/GBM_Digital/FEMSA_ES.pdf' != 'https://gbmenlinea.gbm.com.mx/Documentosanalisis/GBM_Digital/ALFA_ES.pdf'
+- https://gbmenlinea.gbm.com.mx/Documentosanalisis/GBM_Digital/FEMSA_ES.pdf
+?                                                               ---
++ https://gbmenlinea.gbm.com.mx/Documentosanalisis/GBM_Digital/ALFA_ES.pdf
+?                                                              ++
+</p>
+                                    </td>
+                                </tr>
                             
                         
                         <tr>
@@ -45,7 +59,7 @@
                                Total Test Runned: 1
                             </td>
                             <td>
-                                <span>Pass: 1</span>
+                                <span>Fail: 1</span>
                             </td>
                         </tr>
                     </tbody>
